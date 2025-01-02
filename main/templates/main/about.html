@@ -7,14 +7,17 @@
 
 
 {% block content %}
-    <h1 class="mt-5 pt-5"><strong>{{ content }}</strong></h1>
+    <div class="mt-5 pt-5 bg-white custom-shadow rounded">
+        <h2 class="mt-5 pt-5"><strong>{{ content }}</strong></h2>
+        <p>{{ text_on_page }}</p>
+    </div>
 {% endblock content %}
 
 
 {% block footer %}
     <footer class="py-4 bg-dark">
         <div class="container">
-            <p class="m-0 text-center text-white">Copyright &copy; Home Python Hub Studio 2023</p>
+            <p class="m-0 text-center text-white">Copyright &copy; RentRelay Python Hub Studio 2023</p>
         </div>
     </footer>
 {% endblock footer %}
