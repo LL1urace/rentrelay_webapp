@@ -7,6 +7,23 @@ body {
   height: 100%;
 }
 
+/* Чтобы модальное окно корзины не слетало влево */
+.modal-open, .sticky-top {
+  padding-right: 0 !important;
+  padding-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+.modal-open {
+  overflow: auto;
+  padding-right: 0 !important;
+}
+
+.modal {
+  padding-right: 0 !important;
+}
+/* Чтобы модальное окно корзины не слетало влево */
+
 .dropdown-toggle::after {
   content: none;
 }
