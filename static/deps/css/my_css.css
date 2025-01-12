@@ -33,7 +33,7 @@ body {
 }
 
 .product_id {
-  color: gray;
+  color: rgb(97, 97, 97);
   font-size: 15px;
 }
 
@@ -52,4 +52,12 @@ body {
   top: 80%;
   border-radius: 15px;
   font-size: 0.7rem;
+}
+
+.text-orange {
+  color: #ff6600; /* Оранжевый цвет */
+}
+
+.custom-margin-bottom {
+  margin-bottom: 100px !important;
 }
