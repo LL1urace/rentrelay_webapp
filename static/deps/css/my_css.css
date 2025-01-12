@@ -73,3 +73,7 @@ body {
 .custom-margin-bottom {
   margin-bottom: 100px !important;
 }
+
+.custom-search-width {
+  width: 400px; /* Укажите нужную ширину */
+}

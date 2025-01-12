@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block modal_cart %}
+    {% include "includes/cart_button.html" %}
+{% endblock modal_cart %}
+
+{% block content %}
+    <!-- Контент на странице -->
+    <div class="row">
+        <div class="container mt-5">
+            <div class="row justify-content-center">
+                <div class="col-md-9 bg-white p-4 mb-5 mx-2 rounded custom-shadow">
+                    <h2 class="text-center mb-4">Добавить товар</h2>
+                    <form action="#" method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+
+                        <div class="row">
+                            <!-- Название товара -->
+                            <div class="col-md-12 mb-3">
+                                <label for="id_product_name" class="form-label">Название товара*</label>
+                                <input type="text" class="form-control" id="id_product_name"
+                                    value="{% if form.product_name.value %}{{ form.product_name.value }}{% endif %}"
+                                    name="product_name"
+                                    placeholder="Введите название товара" required>
+                                {% if form.product_name.errors %}
+                                    <div class="alert alert-danger alert-dismissible fade show">{{ form.product_name.errors }}</div>
+                                {% endif %}
+                            </div>
+
+                            <!-- Описание товара -->
+                            <div class="col-md-12 mb-3">
+                                <label for="id_description" class="form-label">Описание товара*</label>
+                                <textarea class="form-control" id="id_description" name="description" rows="4" placeholder="Введите описание товара" required>{% if form.description.value %}{{ form.description.value }}{% endif %}</textarea>
+                                {% if form.description.errors %}
+                                    <div class="alert alert-danger alert-dismissible fade show">{{ form.description.errors }}</div>
+                                {% endif %}
+                            </div>
+
+                            <!-- Цена товара -->
+                            <div class="col-md-6 mb-3">
+                                <label for="id_price" class="form-label">Цена товара*</label>
+                                <input type="number" class="form-control" id="id_price"
+                                    value="{% if form.price.value %}{{ form.price.value }}{% endif %}"
+                                    name="price"
+                                    placeholder="Введите цену товара" step="0.01" required>
+                                {% if form.price.errors %}
+                                    <div class="alert alert-danger alert-dismissible fade show">{{ form.price.errors }}</div>
+                                {% endif %}
+                            </div>
+
+                            <!-- Количество товара -->
+                            <div class="col-md-6 mb-3">
+                                <label for="id_quantity" class="form-label">Количество*</label>
+                                <input type="number" class="form-control" id="id_quantity"
+                                    value="{% if form.quantity.value %}{{ form.quantity.value }}{% endif %}"
+                                    name="quantity"
+                                    placeholder="Введите количество товара" min="1" required>
+                                {% if form.quantity.errors %}
+                                    <div class="alert alert-danger alert-dismissible fade show">{{ form.quantity.errors }}</div>
+                                {% endif %}
+                            </div>
+
+                            <!-- Изображение товара -->
+                            <div class="col-md-12 mb-3">
+                                <label for="id_image" class="form-label">Изображение товара*</label>
+                                <input type="file" class="form-control" id="id_image" name="image" accept="image/*" required>
+                                {% if form.image.errors %}
+                                    <div class="alert alert-danger alert-dismissible fade show">{{ form.image.errors }}</div>
+                                {% endif %}
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-dark btn-block">Добавить товар</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

@@ -201,6 +201,18 @@ $(document).ready(function () {
         $('#exampleModal').modal('hide');
     });
 
+    // При клике по значку добавления товара открываем всплывающее(модальное) окно
+    $('#modalButton2').click(function () {
+        $('#exampleModal2').appendTo('body');
+
+        $('#exampleModal2').modal('show');
+    });
+
+    // Собыите клик по кнопке закрыть окна корзины
+    $('#exampleModal2 .btn-close').click(function () {
+        $('#exampleModal2').modal('hide');
+    });
+
     // Обработчик события радиокнопки выбора способа доставки
     $("input[name='requires_delivery']").change(function() {
         var selectedValue = $(this).val();
