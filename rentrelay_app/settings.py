@@ -89,7 +89,7 @@ WSGI_APPLICATION = 'rentrelay_app.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'home',
+        'NAME': 'rentrelay',
         'USER': 'll1urace',
         'PASSWORD': 'll1urace',
         'HOST': 'localhost',
@@ -153,3 +153,7 @@ INTERNAL_IPS = [
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 AUTH_USER_MODEL = 'users.User'
 LOGIN_URL = '/user/login/'
+
+FIXTURE_DIRS = [
+    BASE_DIR / "fixtures",
+]

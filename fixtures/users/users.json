@@ -1,0 +1,66 @@
+[
+    {
+        "model": "users.user",
+        "pk": 1,
+        "fields": {
+            "password": "pbkdf2_sha256$870000$2Ky33gypMjTFy5XiRQgUAP$fK9gXh06BKwumWS9mtJNPBWELmq7Btr44RmidQhuwiM=",
+            "last_login": "2025-01-12T13:59:21.574Z",
+            "is_superuser": true,
+            "username": "ll1urace",
+            "first_name": "",
+            "last_name": "",
+            "email": "",
+            "is_staff": true,
+            "is_active": true,
+            "date_joined": "2025-01-07T16:07:12.651Z",
+            "image": "",
+            "phone_number": null,
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "users.user",
+        "pk": 2,
+        "fields": {
+            "password": "pbkdf2_sha256$870000$2JM3FDnDOOsyTMie5h8Pmo$SbEJy6i6h4FyUMw8/UAmObrbwk+2cn27xGXo1JbVHVM=",
+            "last_login": "2025-01-12T10:54:05.081Z",
+            "is_superuser": false,
+            "username": "User",
+            "first_name": "Name",
+            "last_name": "LastName",
+            "email": "example@inbox.ru",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2025-01-08T17:27:39.696Z",
+            "image": "",
+            "phone_number": null,
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "users.user",
+        "pk": 35,
+        "fields": {
+            "password": "pbkdf2_sha256$870000$GV5wscV5l5zGGNXe54wdrt$jS2HSDSW2xW/kQDWxXgKjaAaq50owWYEk/qBCTAd3Uc=",
+            "last_login": "2025-01-10T14:47:14.369Z",
+            "is_superuser": false,
+            "username": "Username2",
+            "first_name": "Name2",
+            "last_name": "LastName2",
+            "email": "example2@inbox.ru",
+            "is_staff": true,
+            "is_active": true,
+            "date_joined": "2025-01-08T17:41:23Z",
+            "image": "users_images/unnamed_zGKbPpY.png",
+            "phone_number": null,
+            "groups": [],
+            "user_permissions": [
+                25,
+                26,
+                28
+            ]
+        }
+    }
+]

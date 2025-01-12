@@ -32,6 +32,10 @@ body {
   box-shadow: 5px 5px 25px 19px #000000;
 }
 
+.custom-shadow-soft {
+  box-shadow: 3px 3px 15px 5px rgba(0, 0, 0, 0.3); /* Более мягкая тень */
+}
+
 .product_id {
   color: rgb(97, 97, 97);
   font-size: 15px;
@@ -56,6 +60,14 @@ body {
 
 .text-orange {
   color: #ff6600; /* Оранжевый цвет */
+}
+
+.text-red {
+  color: rgb(255, 0, 0) !important;
+}
+
+.text-pink {
+  color: rgb(255, 0, 157) !important;
 }
 
 .custom-margin-bottom {

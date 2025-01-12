@@ -44,15 +44,19 @@
                                 <li><a class="dropdown-item  text-white" href="{% url "main:delivery" %}">Доставка и оплата</a></li>
                             </ul>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link  text-white" href="{% url "user:users_cart" %}">Корзина</a>
+                        <li class="nav-item border-start">
+                            <a class="nav-link text-red" href="{% url "user:users_cart" %}">Корзина</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-pink" href="{% url "user:users_cart" %}">Добавить товар</a>
+                        </li>
+
                         {% if not user.is_authenticated %}
                             <li class="nav-item">
                                 <a class="nav-link  text-white" href="{% url "users:login" %}">Войти</a>
                             </li>
                         {% else %}
-                            <li class="nav-item dropdown ">
+                            <li class="nav-item dropdown border-start border-end">
                                 <a class="nav-link dropdown-toggle text-white" href="#" role="button"
                                     data-bs-toggle="dropdown" aria-expanded="false">
                                     Мой профиль
@@ -103,6 +107,10 @@
                 <!-- Значек корзины, вызывает модальное окно -->
                 {% block modal_cart %}
                 {% endblock modal_cart %}
+                <!-- Закончилась разметка модального окна -->
+                 <!-- Значек добавления товара, вызывает модальное окно -->
+                {% block modal_add_goods %}
+                {% endblock modal_add_goods %}
                 <!-- Закончилась разметка модального окна -->
             </div>
         </div>
