@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+
+
+{% block content %}
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-9 bg-white p-4 mb-5 mx-2 rounded shadow">
+                <h2 class="text-center mb-4">Добавить категорию</h2>
+                <form method="POST" action="{% url 'rentitems:add_category' %}">
+                    {% csrf_token %}
+                    <div class="form-group mb-3">
+                        <label for="id_name" class="form-label">Название категории*</label>
+                        {{ form.name }}
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <label for="id_slug" class="form-label">URL категории*</label>
+                        {{ form.slug }}
+                    </div>
+
+                    <button type="submit" class="btn btn-dark">Добавить категорию</button>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

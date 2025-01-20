@@ -117,12 +117,6 @@ def users_cart(request):
     
     return render(request, 'users/users_cart.html', context)
 
-def users_items(request):
-    context = {
-        'title': 'R&R',
-    }
-    return render(request, 'users/users-items.html', context)
-
 @login_required
 def logout(request):
     username = request.user.username  # Сохраняем имя пользователя перед logout

@@ -2,7 +2,7 @@ from django import template
 from django.utils.http import urlencode
 
 from goods.models import Categories
-
+from rentitems.models import RentCategories
 
 
 register = template.Library()
@@ -11,7 +11,9 @@ register = template.Library()
 
 @register.simple_tag()
 def tag_categories():
-    return Categories.objects.all()
+    # Получаем все категории из обеих моделей
+    categories = list(Categories.objects.all()) + list(RentCategories.objects.all())
+    return categories
 
 
 

@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block modal_cart %}
+    {% include "includes/cart_button.html" %}
+{% endblock modal_cart %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2 class="mb-4 text-white">Мои товары для аренды</h2>
+
+    <div class="row">
+        <!-- Кнопка добавления категории -->
+        <div class="col-md-6 mb-3">
+            <a href="{% url 'rentitems:add_category' %}" class="btn btn-primary">
+                Добавить категорию
+            </a>
+        </div>
+
+        <!-- Кнопка добавления товара -->
+        <div class="col-md-6 mb-3">
+            <a href="{% url 'rentitems:add_item' %}" class="btn btn-success">
+                Добавить товар
+            </a>
+        </div>
+    </div>
+
+    <hr class="my-4">
+
+    <!-- Список товаров пользователя -->
+    <h4 class="text-white">Мои товары</h4>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Название</th>
+                <th>Категория</th>
+                <th>Цена за день</th>
+                <th>Залог</th>
+                <th>Доступность</th>
+                <th>Дата добавления</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in rent_items %}
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                <td>{{ item.name }}</td>
+                <td>{{ item.category.name }}</td>
+                <td>{{ item.price_per_day }}</td>
+                <td>{{ item.deposit }}</td>
+                <td>{{ item.available|yesno:"Да,Нет" }}</td>
+                <td>{{ item.created_at }}</td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="7" class="text-center">Вы еще не добавили ни одного товара.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock content %}
