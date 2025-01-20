@@ -7,6 +7,7 @@ app_name = 'rentitems'
 
 urlpatterns = [
     path('add_item/', views.add_item, name='add_item'),
+    path('remove_item/', views.remove_item, name='remove_item'),
     path('add_category/', views.add_category, name='add_category'),
     path('users-rentitems/', views.users_rentitems, name='user_rentitems'),
 ]

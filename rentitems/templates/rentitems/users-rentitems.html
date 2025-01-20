@@ -39,6 +39,7 @@
                 <th>Залог</th>
                 <th>Доступность</th>
                 <th>Дата добавления</th>
+                <th>Удалить</th>
             </tr>
         </thead>
         <tbody>
@@ -51,10 +52,19 @@
                 <td>{{ item.deposit }}</td>
                 <td>{{ item.available|yesno:"Да,Нет" }}</td>
                 <td>{{ item.created_at }}</td>
+                <td>
+                    <form action="{% url 'rentitems:remove_item' %}" method="post" style="display: inline;">
+                        {% csrf_token %}
+                        <input type="hidden" name="rent_item_id" value="{{ item.id }}">
+                        <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Вы уверены, что хотите удалить этот товар?');">
+                            Удалить
+                        </button>
+                    </form>
+                </td>
             </tr>
             {% empty %}
             <tr>
-                <td colspan="7" class="text-center">Вы еще не добавили ни одного товара.</td>
+                <td colspan="8" class="text-center">Вы еще не добавили ни одного товара.</td>
             </tr>
             {% endfor %}
         </tbody>
